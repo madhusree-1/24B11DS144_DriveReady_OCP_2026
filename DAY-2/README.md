@@ -1,32 +1,80 @@
 # Agentic AI Workshop – Day 2
 
-## Day 2 – Building a Bakery Chatbot with Python & API Integration
+#  Routine Rescue AI — Day 2
 
-On Day 2 of the Agentic AI Workshop, I explored how to interact with an AI model using the OpenAI Python library while connecting to Groq's API endpoint. I worked on building a more structured bakery assistant for Sweet Crumbs Home Bakery and practiced Python concepts alongside API integration, handling user queries, managing data and creating a conversational flow.
+## Smart Daily Planning Assistant
 
-### Implementation
+###  Day 2 Overview
+Day 2 extends the basic Routine Rescue AI assistant developed on Day 1. The project incorporates structured data handling, few-shot prompting, Python functions, decorators, conversation memory and error handling.
 
-- Installed and used the `openai` Python library.
-- Configured the OpenAI client to communicate with Groq using its API endpoint.
-- Accessed the Groq API key securely through Google Colab Secrets.
-- Sent requests to the `openai/gpt-oss-120b` model and explored its responses.
-- Created a system instruction for the Sweet Crumbs Home Bakery assistant with menu details, pricing, ordering rules and response guidelines.
-- Practiced working with Python dictionaries to store bakery menu items and prices.
-- Created functions to calculate the prices of items based on quantity.
-- Explored dictionary access, variables, function parameters and return values.
-- Practiced error handling using `try` and `except` by handling a `NameError`.
-- Implemented a `log_call` decorator to log function calls and their results.
-- Maintained conversational history to allow the assistant to remember earlier messages.
-- Added handling for API rate-limit errors and connection errors.
-- Implemented a continuous interactive chat loop that allows users to chat with the bakery assistant until they exit.
+###  Day 2 Objectives
+- Understand messages and roles.
+- Implement few-shot task classification.
+- Represent tasks using JSON.
+- Store priority information using dictionaries.
+- Create reusable functions with type hints and docstrings.
+- Implement decorators for logging.
+- Maintain conversational memory.
+- Handle API errors.
+- Integrate the concepts into the project.
 
-### Key Takeaways
+###  Technologies Used
+- Python
+- Google Colab
+- Groq API
+- OpenAI-compatible API client
+- JSON
 
-- Connecting Python applications to LLM APIs.
-- Understanding API client configuration and model requests.
-- Working with dictionaries, functions, decorators and exception handling.
-- Maintaining conversation history in a chatbot.
-- Handling API errors gracefully.
-- Building a command-line conversational AI assistant.
+###  Implementation
 
-**Day 2 Completed – API Integration, Python Concepts, Conversation Handling & Error Management.**eering, memory and Python-based chatbot development.
+**1. Messages and Roles**
+
+Used system, user and assistant messages to structure AI conversations.
+
+**2. Few-Shot Prompting**
+
+Provided examples to classify messages into TASK, QUESTION or GREETING.
+
+**3. JSON Task Representation**
+
+Represented a task using structured fields such as task name, category, priority, duration and completion status.
+
+**4. Python Dictionaries**
+
+Used dictionaries to represent task priorities.
+
+**5. Functions and Type Hints**
+
+Implemented reusable task-duration utilities.
+
+**6. Decorators**
+
+Created a logging decorator to observe function calls.
+
+**7. Conversation Memory**
+
+Maintained a conversation history so the assistant could refer to recent messages.
+
+**8. Error Handling**
+
+Handled API rate limits, authentication errors, connection errors and general exceptions.
+
+###  Testing
+- Task classification
+- Structured task representation
+- Task-duration validation
+- Function logging
+- Conversation memory
+- API error handling
+
+###  Day 2 Architecture
+
+User Input → Conversation History → Groq LLM → AI Response → Updated History
+
+### Day 2 Outcome
+
+Enhanced the initial AI assistant with structured task-related data, conversational memory, reusable functions and error-handling mechanisms.
+
+---
+
+*Routine Rescue AI — Turning tasks into achievable plans.*
