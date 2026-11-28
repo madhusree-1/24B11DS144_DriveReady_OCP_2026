@@ -1,30 +1,65 @@
-## Day 4 – Tools, Structured Output & Google Sheets Integration
+# Routine Rescue AI — Day 4
 
-On Day 4 of the Agentic AI Workshop, I explored how AI agents can use tools to perform tasks, validate structured data using Pydantic, and interact with Google Sheets. I built a bakery order assistant for Sweet Crumbs Home Bakery that can check prices, verify opening hours, and record customer orders.
+## Overview
+Routine Rescue AI is a student productivity agent that helps students manage their daily tasks, estimate task durations, organize study time and store tasks in Google Sheets.
 
-### Implementation
+Day 4 introduces tool-based agent functionality and structured data validation.
 
-- Installed `langchain`, `langchain-groq` and `gspread` libraries.
-- Configured the Groq API key using Google Colab Secrets.
-- Initialized the language model using `ChatGroq`.
-- Connected Google Colab with Google Sheets using Google authentication and `gspread`.
-- Created a Google Sheet to store bakery order details.
-- Defined structured order data using a Pydantic `Order` model.
-- Created tools using LangChain's `@tool` decorator:
-  - `get_price()` – calculates the total price of bakery items.
-  - `is_open()` – checks bakery opening hours.
-  - `log_order()` – validates and stores customer orders in Google Sheets.
-- Created an AI agent using `create_agent()` with the defined tools and system instructions.
-- Implemented a `chat()` function to interact with the agent and maintain conversation history.
-- Tested the agent with queries related to bakery timings, prices and order booking.
+## Objectives
+- Integrate Google Sheets with the AI agent.
+- Create structured task data using Pydantic.
+- Develop tools using the LangChain `@tool` decorator.
+- Estimate task completion time.
+- Check available study time.
+- Add tasks to Google Sheets.
+- Retrieve previously saved tasks.
+- Integrate tools with a LangChain agent.
 
-### Key Takeaways
+## Technologies Used
+- Python
+- Google Colab
+- Groq LLM
+- LangChain
+- Google Sheets
+- gspread
+- Pydantic
 
-- Understanding how AI agents use tools to perform actions.
-- Creating custom tools using LangChain.
-- Validating structured data using Pydantic.
-- Integrating Google Sheets with an AI agent.
-- Building tool-based conversational workflows.
-- Maintaining conversation history during agent interactions.
+## Implementation
 
-**Day 4 Completed – Tool Calling, Structured Output & Google Sheets Integration.**
+### 1. LLM Integration
+Connected the Groq model using LangChain's ChatGroq.
+
+### 2. Google Sheets Integration
+Created a Google Sheets task tracker to store student task details.
+
+### 3. Structured Task Model
+Implemented a Pydantic Task model with task description, subject, priority, deadline, estimated duration and status.
+
+### 4. Tools
+Created the following tools:
+
+- `estimate_task_time()` — estimates task duration.
+- `get_available_time()` — checks the student's available time.
+- `add_task()` — validates and stores tasks.
+- `view_tasks()` — retrieves saved tasks.
+
+### 5. Agent Creation
+Integrated the tools using LangChain's `create_agent()` function.
+
+### 6. Chat and Memory
+Implemented a chat function with conversation history to support multi-turn interactions.
+
+## Architecture
+
+Student Input → LLM Agent → Tool Selection → Tool Execution → Google Sheets / Tool Result → Agent Response
+
+## Testing
+- Task planning
+- Task duration estimation
+- Available time retrieval
+- Task confirmation and saving
+- Task retrieval
+
+## Outcome
+Routine Rescue AI evolved from a conversational planning assistant into a tool-using agent capable of interacting with a Google Sheets task tracker.
+
