@@ -1,26 +1,71 @@
-# Agentic AI Workshop – Day 1
+#  Routine Rescue AI — Day 1
 
-## Day 1 – Getting Started with LLMs
+## Smart Daily Planning Assistant
 
-On Day 1 of the Agentic AI Workshop, I set up my environment to work with the Groq-hosted language model and built a basic AI assistant for Sweet Crumbs Home Bakery. I also explored Prompt Guard to understand how AI systems can detect potentially unsafe inputs.
+### Project Overview
+Routine Rescue AI is an AI-powered productivity assistant designed to help students organize their tasks, prioritize work, and create realistic daily schedules based on their available time.
+
+Day 1 focuses on establishing the LLM-powered foundation of the project using Groq and LangChain.
+
+###  Day 1 Objectives
+- Connect to a Large Language Model (LLM) using Groq.
+- Initialize the AI model using LangChain.
+- Create a custom system prompt for Routine Rescue AI.
+- Build a reusable `ask()` function.
+- Test the AI's daily planning responses.
+- Explore the Prompt Guard model for suspicious prompt detection.
+
+### Technologies Used
+- Python
+- Google Colab
+- Groq API
+- LangChain
+- GPT-OSS 120B
+- Prompt Guard
 
 ### Implementation
 
-- Installed the `langchain_groq` library and imported `ChatGroq`.
-- Configured the Groq API key using Google Colab Secrets.
-- Initialized the language model using `ChatGroq`.
-- Defined a `SYSTEM` variable containing the assistant's role, business facts and response rules.
-- Created an `ask()` function using `llm.invoke()` to send user queries along with system instructions.
-- Tested the assistant using a sample bakery-order query.
-- Integrated Groq's Prompt Guard model `meta-llama/llama-prompt-guard-2-22m`.
-- Tested Prompt Guard using a sample input containing an instruction to ignore previous instructions.
-- Observed the Prompt Guard output score.
+**1. LLM Setup**
 
-### Key Takeaways
+Installed `langchain_groq` and initialized the Groq language model using the API key stored in Google Colab Secrets.
 
-- Setting up and connecting to a language model through Groq.
-- Understanding how system and user messages are passed to an LLM.
-- Building a basic question-and-answer assistant.
-- Exploring prompt safety and input detection using Prompt Guard.
+**2. System Prompt Design**
 
-**Day 1 Completed – LLM Setup, Basic Assistant & Prompt Guard.** setup and Prompt Guard exploration.
+Defined the role, purpose, rules and response format for Routine Rescue AI to ensure it behaves as a student productivity assistant.
+
+**3. `ask()` Function**
+
+Created a reusable function that accepts a user question, sends it to the LLM along with the system instructions, and returns the AI-generated response.
+
+**4. Testing the Assistant**
+
+Tested the assistant with scenarios involving:
+- DSA problems and Python assignments.
+- Limited study time.
+- Pending tasks and schedule planning.
+
+**5. Prompt Guard Exploration**
+
+Used the Prompt Guard model to examine a suspicious prompt and observe its classification output.
+
+###  Sample Test
+
+**Input:**
+
+"I have 2 DSA problems and a Python assignment. I have 2 hours today. Help me plan."
+
+**Expected Behavior:**
+
+Routine Rescue AI generates a realistic schedule, prioritizes tasks, and suggests appropriate breaks.
+
+### Day 1 Architecture
+
+User Input → System Prompt → Groq LLM → AI-Generated Response
+
+###  Day 1 Outcome
+
+Successfully established the LLM connection and built the initial AI assistant capable of generating student-focused daily planning suggestions.
+
+---
+
+*Routine Rescue AI — Turning tasks into achievable plans.*
